@@ -1,15 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 
+import { auth } from "@/lib/auth/server";
 import { mintJwt } from "@/lib/jwt";
-import { getSession } from "@/services/auth/auth-server";
 
 const CORE = process.env.CORE_MODULE_URL ?? "http://localhost:8787";
 
 /**
  * Server-side proxy: browser → Next.js route → core-module.
  *
- * 1. Reads the Better-Auth session via `getSession()` (which forwards
- *    cookies to NEXT_PUBLIC_AUTH_URL/get-session).
+ * 1. Reads the Better-Auth session via `auth.api.getSession({ headers })`,
+ *    using the local Better-Auth instance (src/lib/auth/server.ts).
  * 2. Mints a 60-second HS256 JWT signed with JWT_SECRET (must match
  *    core-module/.env JWT_SECRET).
  * 3. Forwards the request to CORE_MODULE_URL with the Bearer token.
@@ -22,19 +22,14 @@ async function handle(
 ) {
   const { path } = await ctx.params;
 
-  const sessionData = await getSession();
-  if (!sessionData?.user) {
+  const session = await auth.api.getSession({ headers: req.headers });
+  if (!session?.user) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   }
 
-  const user = sessionData.user as {
-    id: string;
-    email: string;
-  };
-
   const jwt = await mintJwt({
-    userId: user.id,
-    email: user.email,
+    userId: session.user.id,
+    email: session.user.email,
     role: "admin",
   });
 

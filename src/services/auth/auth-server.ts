@@ -1,34 +1,19 @@
 import { headers } from "next/headers";
 
+import { auth } from "@/lib/auth/server";
+
 /**
  * Server-side session retrieval via Better Auth.
- * Forwards request cookies and returns { user, session } or null.
+ *
+ * Used to call `${NEXT_PUBLIC_AUTH_URL}/get-session` over HTTP. Now delegates
+ * to the local Better-Auth instance (src/lib/auth/server.ts) — same return
+ * shape (`{ user, session } | null`), so existing callers keep working.
  */
 export const getSession = async () => {
   try {
-    if (!process.env.NEXT_PUBLIC_AUTH_URL) {
-      return null;
-    }
-
     const headersList = await headers();
-
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_AUTH_URL}/get-session`,
-      {
-        headers: {
-          cookie: headersList.get("cookie") || "",
-        },
-        cache: "no-store",
-      },
-    );
-
-    if (!response.ok) {
-      return null;
-    }
-
-    const data = await response.json();
-
-    return data?.user ? data : null;
+    const result = await auth.api.getSession({ headers: headersList });
+    return result?.user ? result : null;
   } catch (error: unknown) {
     // Re-throw Next.js internal errors (e.g. DYNAMIC_SERVER_USAGE from
     // calling headers() at build time) so the framework can handle them

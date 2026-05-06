@@ -1,6 +1,18 @@
 /**
  * Presentation Mode Detection Utilities
- * Automatically detects if backend/auth is available and enables presentation mode
+ *
+ * Used by nellavio to render the static demo without a backend. In Ribbler,
+ * auth is now local (Better-Auth talks to Postgres directly via /api/auth),
+ * so we no longer probe NEXT_PUBLIC_AUTH_URL to decide whether auth is
+ * available — it always is in this codebase.
+ *
+ * Presentation mode is now an explicit opt-in:
+ *   - Server: GRAPHQL_URL unset → no GraphQL backend → presentation mode.
+ *   - Client: NEXT_PUBLIC_PRESENTATION_MODE === "true" → demo mode.
+ *
+ * (The legacy hasValidAuthUrl() / isAuthAvailable() helpers are kept for
+ * the existing test suite and any consumers that read NEXT_PUBLIC_AUTH_URL
+ * directly. They should be considered deprecated.)
  */
 
 /**
@@ -12,8 +24,8 @@ export const hasValidBackendUrl = (): boolean => {
 };
 
 /**
- * Check if Better Auth is configured and valid
- * Note: Only checks NEXT_PUBLIC_AUTH_URL (available in middleware/edge runtime)
+ * Legacy: check if NEXT_PUBLIC_AUTH_URL is configured. Kept for tests; not
+ * load-bearing anymore now that auth is local.
  */
 export const hasValidAuthUrl = (): boolean => {
   const url = process.env.NEXT_PUBLIC_AUTH_URL;
@@ -22,30 +34,28 @@ export const hasValidAuthUrl = (): boolean => {
 
 /**
  * Check if app is running in presentation mode (no backend)
- * Server-side detection
+ * Server-side detection.
  */
 export const isPresentationMode = (): boolean => {
   return !hasValidBackendUrl();
 };
 
 /**
- * Check if auth is available
- * Safe for middleware/edge runtime (doesn't check BETTER_AUTH_SECRET)
+ * Legacy: whether NEXT_PUBLIC_AUTH_URL is set. Auth is now always available
+ * via the local handler, but kept for back-compat.
  */
 export const isAuthAvailable = (): boolean => {
   return hasValidAuthUrl();
 };
 
 /**
- * Client-side presentation mode detection
- * Use this in React components (client-side only)
+ * Client-side presentation mode detection.
+ *
+ * Auth is local now, so the only way the client side enters presentation
+ * mode is the explicit NEXT_PUBLIC_PRESENTATION_MODE=true flag. Defaults
+ * to false (full app, real auth, real backend).
  */
 export const isPresentationModeClient = (): boolean => {
   if (typeof window === "undefined") return false;
-
-  const authUrl = process.env.NEXT_PUBLIC_AUTH_URL;
-  return (
-    !authUrl ||
-    !(authUrl.startsWith("http://") || authUrl.startsWith("https://"))
-  );
+  return process.env.NEXT_PUBLIC_PRESENTATION_MODE === "true";
 };

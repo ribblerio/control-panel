@@ -1,22 +1,37 @@
 import { createAuthClient } from "better-auth/react";
 
-const authUrl = process.env.NEXT_PUBLIC_AUTH_URL;
-const isAuthConfigured =
-  !!authUrl &&
-  (authUrl.startsWith("http://") || authUrl.startsWith("https://"));
+import { isPresentationModeClient } from "@/utils/presentationMode";
 
 /**
  * Better Auth client instance for client-side authentication.
- * Returns null in presentation mode (NEXT_PUBLIC_AUTH_URL not set)
- * to avoid 404 requests and hydration mismatches.
  *
- * Admin plugin (adminClient) should be added here when connecting
- * to a real backend with RBAC enabled. See config/access.ts for
- * role definitions compatible with Better Auth's admin plugin.
+ * Now talks to the **local** Better-Auth handler at /api/auth (mounted in
+ * src/app/api/auth/[...all]/route.ts) instead of the previous external
+ * NEXT_PUBLIC_AUTH_URL.
+ *
+ * baseURL must be a valid absolute URL — Better-Auth validates it via `new
+ * URL(...)`. On the client we build it from `window.location.origin`. On the
+ * server we use NEXT_PUBLIC_BETTER_AUTH_URL or a localhost fallback (the SSR
+ * path through this module is rare; useSession() etc. are client-only).
+ *
+ * Presentation mode (NEXT_PUBLIC_PRESENTATION_MODE=true) returns null so the
+ * static demo deployment of nellavio still works without a backend.
+ *
+ * Admin plugin (adminClient) should be added here when connecting RBAC.
  */
-const authClient = isAuthConfigured
-  ? createAuthClient({ baseURL: authUrl })
-  : null;
+const baseURL = (() => {
+  if (typeof window !== "undefined") {
+    return `${window.location.origin}/api/auth`;
+  }
+  const explicit =
+    process.env.NEXT_PUBLIC_BETTER_AUTH_URL ?? process.env.BETTER_AUTH_URL;
+  return `${explicit ?? "http://localhost:3000"}/api/auth`;
+})();
+
+const authClient =
+  typeof window === "undefined" || !isPresentationModeClient()
+    ? createAuthClient({ baseURL })
+    : null;
 
 /**
  * Authentication methods from Better Auth client.
