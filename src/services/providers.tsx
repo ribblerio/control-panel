@@ -1,28 +1,27 @@
 "use client";
 
-import { ApolloProvider } from "@apollo/client/react";
 import { ThemeProvider } from "next-themes";
 
 import { TooltipProvider } from "../components/common/shadcn/tooltip";
 import { Layout } from "../components/layout/Layout";
 import { APP_DEFAULTS } from "../config/appDefaults";
-import { client } from "./apolloClient";
+import { QueryProvider } from "../lib/query-client";
 
 export const THEMES_ARRAY = ["light", "dark"];
 
 /**
- * Root provider wrapping ApolloClient, ThemeProvider, and Layout.
+ * Root provider wrapping TanStack Query, ThemeProvider, and Layout.
  * Must be used in client component context.
  *
  * @component
  * @param {React.ReactNode} props.children - App content
  *
- * @see {@link https://www.apollographql.com/docs/react/api/react/hooks Apollo Client}
+ * @see {@link https://tanstack.com/query/latest TanStack Query}
  * @see {@link https://github.com/pacocoursey/next-themes next-themes}
  */
 export const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
-    <ApolloProvider client={client}>
+    <QueryProvider>
       <ThemeProvider
         enableSystem={false}
         attribute="class"
@@ -34,6 +33,6 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
           <Layout>{children}</Layout>
         </TooltipProvider>
       </ThemeProvider>
-    </ApolloProvider>
+    </QueryProvider>
   );
 };
