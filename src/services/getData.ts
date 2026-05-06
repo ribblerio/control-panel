@@ -1,6 +1,4 @@
 import fs from "fs";
-import { DocumentNode } from "graphql";
-import { headers } from "next/headers";
 import path from "path";
 
 import type { AnalyticsViewProps } from "../components/views/analytics/types";
@@ -9,23 +7,6 @@ import type { Customer } from "../components/views/customers/types";
 import type { HomepageViewProps } from "../components/views/homepage/types";
 import type { OrderType } from "../components/views/orders/types";
 import type { Product } from "../components/views/products/types";
-import { ANALYTICS_QUERY } from "../queries/AnalyticsQuery";
-import { CUSTOMERS_QUERY } from "../queries/CustomersQuery";
-import { EVENTS_QUERY } from "../queries/EventsQuery";
-import { HOMEPAGE_QUERY } from "../queries/HomepageQuery";
-import { ORDERS_QUERY } from "../queries/OrdersQuery";
-import { PRODUCTS_QUERY } from "../queries/ProductsQuery";
-import { hasValidBackendUrl } from "../utils/presentationMode";
-import { client } from "./apolloClient";
-
-const QUERY_MAP: Record<string, DocumentNode> = {
-  analytics: ANALYTICS_QUERY,
-  events: EVENTS_QUERY,
-  customers: CUSTOMERS_QUERY,
-  homepage: HOMEPAGE_QUERY,
-  orders: ORDERS_QUERY,
-  products: PRODUCTS_QUERY,
-};
 
 interface PageDataMap {
   orders: OrderType[];
@@ -39,12 +20,12 @@ interface PageDataMap {
 type PageName = keyof PageDataMap;
 
 /**
- * Retrieves mock data from backendBackup.json for standalone mode.
+ * Retrieves mock data from backendBackup.json. Demo-data path used by all
+ * inherited nellavio pages. Phase 5 will replace consumers with TanStack
+ * Query against core-module's REST API; until then this stub keeps the
+ * inherited pages building without Apollo.
  *
- * @template T - Page name type
- * @param {T} pageName - Page identifier
- * @returns {PageDataMap[T]} Mock data for the page
- * @private
+ * TODO(phase-5): wire to TanStack Query against core-module.
  */
 const getBackupData = <T extends PageName>(pageName: T): PageDataMap[T] => {
   const backupFilePath = path.join(
@@ -60,42 +41,12 @@ const getBackupData = <T extends PageName>(pageName: T): PageDataMap[T] => {
 };
 
 /**
- * Fetches dashboard data with automatic fallback to mock data.
- * Works in standalone mode (no backend) or connected mode (GraphQL backend).
- *
- * @template T - Page name type
- * @param {T} pageName - Page identifier ('orders' | 'customers' | 'products' | 'events' | 'analytics' | 'homepage')
- * @returns {Promise<PageDataMap[T]>} Strongly-typed page data
- * @throws {Error} If query not found or data invalid
- *
- * @see {@link https://github.com/nellavio/nellavio-backend Backend setup}
+ * Fetches page data. After removing Apollo (Phase 4) this always reads
+ * the bundled backup JSON. Real data flows for Ribbler are added page-by-page
+ * in Phase 5 via TanStack Query + the openapi-fetch client.
  */
 export const getData = async <T extends PageName>(
   pageName: T,
 ): Promise<PageDataMap[T]> => {
-  if (!hasValidBackendUrl()) {
-    return getBackupData(pageName);
-  }
-
-  const query = QUERY_MAP[pageName];
-  if (!query) {
-    throw new Error(`Query not found for page: ${pageName}`);
-  }
-
-  const headersList = await headers();
-  const cookie = headersList.get("cookie") || "";
-
-  const { data } = await client.query<PageDataMap>({
-    query,
-    context: {
-      headers: { cookie },
-    },
-    fetchPolicy: "no-cache",
-  });
-
-  if (!data) {
-    throw new Error(`No data returned for page: ${pageName}`);
-  }
-
-  return data[pageName];
+  return getBackupData(pageName);
 };

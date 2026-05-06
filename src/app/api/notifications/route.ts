@@ -1,59 +1,23 @@
 import fs from "fs";
-import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import path from "path";
 
-import type { Notification } from "@/components/layout/navbar/hooks/useNotificationsData";
-import { NOTIFICATIONS_QUERY } from "@/queries/NotificationsQuery";
-import { client } from "@/services/apolloClient";
-import { hasValidBackendUrl } from "@/utils/presentationMode";
-
 /**
- * Notifications API route. Reads from backendBackup.json when no valid
- * backend URL is configured, otherwise queries GraphQL with fs fallback.
+ * Notifications API route. Reads from backendBackup.json.
+ *
+ * TODO(phase-5): wire to TanStack Query against core-module's activity feed.
  */
 export async function GET() {
   try {
-    if (!hasValidBackendUrl()) {
-      const filePath = path.join(process.cwd(), "public", "backendBackup.json");
-      const fileContent = fs.readFileSync(filePath, "utf-8");
-      const allData = JSON.parse(fileContent);
+    const filePath = path.join(process.cwd(), "public", "backendBackup.json");
+    const fileContent = fs.readFileSync(filePath, "utf-8");
+    const allData = JSON.parse(fileContent);
 
-      if (!allData.notifications) {
-        throw new Error("No notifications found in backup data");
-      }
-
-      return NextResponse.json(allData.notifications);
+    if (!allData.notifications) {
+      throw new Error("No notifications found in backup data");
     }
 
-    try {
-      const headersList = await headers();
-      const cookie = headersList.get("cookie") || "";
-
-      const { data } = await client.query<{ notifications: Notification[] }>({
-        query: NOTIFICATIONS_QUERY,
-        context: {
-          headers: { cookie },
-        },
-        fetchPolicy: "network-only",
-      });
-
-      return NextResponse.json(data?.notifications ?? []);
-    } catch (backendError: unknown) {
-      console.warn(
-        "[Backend Failed] Using backup data for notifications:",
-        backendError,
-      );
-      const filePath = path.join(process.cwd(), "public", "backendBackup.json");
-      const fileContent = fs.readFileSync(filePath, "utf-8");
-      const allData = JSON.parse(fileContent);
-
-      if (!allData.notifications) {
-        throw new Error("No notifications found in backup data");
-      }
-
-      return NextResponse.json(allData.notifications);
-    }
+    return NextResponse.json(allData.notifications);
   } catch (error: unknown) {
     console.error("Error in notifications API route:", error);
     return NextResponse.json(
