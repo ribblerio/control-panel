@@ -25,6 +25,7 @@ const connectSrcDomains = [
 
 const nextConfig = {
   reactStrictMode: true,
+  output: "standalone",
   turbopack: {
     root: __dirname,
   },
