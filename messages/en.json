@@ -199,6 +199,10 @@
   "sideMenu": {
     "main": "Main",
     "dashboard": "Dashboard",
+    "googleAds": "Google Ads",
+    "aiSuggestions": "AI Suggestions",
+    "aiPermissions": "AI Permissions",
+    "activityLog": "Activity Log",
     "eCommerce": "E-commerce",
     "orders": "Orders",
     "customers": "Customers",

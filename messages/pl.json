@@ -198,6 +198,10 @@
   "sideMenu": {
     "main": "Intro",
     "dashboard": "Panel główny",
+    "googleAds": "Google Ads",
+    "aiSuggestions": "Sugestie AI",
+    "aiPermissions": "Uprawnienia AI",
+    "activityLog": "Dziennik aktywności",
     "eCommerce": "E-commerce",
     "orders": "Zamówienia",
     "customers": "Klienci",
