@@ -1,0 +1,633 @@
+{
+  "homepage": {
+    "revenueOverTime": {
+      "title": "Dochód miesięczny"
+    },
+    "threeSmallCards": {
+      "monthlyTarget": "Miesięczny cel"
+    },
+    "fourSmallCards": {
+      "monthlyTarget": "Miesięczny cel"
+    },
+    "bestSellingProducts": {
+      "title": "Bestsellery"
+    },
+    "customerSatisfaction": {
+      "title": "Zadowolenie klientów"
+    },
+    "revenuePerCountry": {
+      "title": "Przychód według kraju"
+    },
+    "weeklyPerformance": {
+      "title": "Wydajność tygodniowa"
+    }
+  },
+  "pagination": {
+    "previous": "Poprzednia",
+    "next": "Następna",
+    "showing": "Pokazano",
+    "to": "do",
+    "of": "z",
+    "results": "wyników",
+    "itemsPerPage": "Wyników na stronę"
+  },
+  "orders": {
+    "selectPlaceholder": {
+      "allProducts": "Wszystkie produkty",
+      "allUsers": "Wszyscy klienci",
+      "anyPrice": "Dowolna cena",
+      "anyDeliveryType": "Dowolna dostawa",
+      "anyStatus": "Dowolny status"
+    },
+    "tableHeader": {
+      "productName": "Nazwa produktu",
+      "user": "Klient",
+      "price": "Cena",
+      "deliveryType": "Typ dostawy",
+      "date": "Data",
+      "status": "Status"
+    },
+    "deliveryType": {
+      "twoDayShipping": "Dwudniowa dostawa",
+      "standardShipping": "Standardowa dostawa",
+      "freeShipping": "Darmowa dostawa",
+      "expressShipping": "Ekspresowa dostawa"
+    },
+    "status": {
+      "inTransit": "W transporcie",
+      "delivered": "Dostarczone",
+      "shipped": "Wysłane"
+    },
+    "button": {
+      "clearFilters": "Wyczyść filtry",
+      "xlsx": "Eksport do XLSX"
+    },
+    "searchField": {
+      "searchOrders": "Szukaj zamówień..."
+    },
+    "orderModal": {
+      "title": "Szczegóły zamówienia",
+      "id": "ID",
+      "product": "Produkt",
+      "customer": "Klient",
+      "price": "Cena",
+      "shipping": "Dostawa",
+      "date": "Data",
+      "status": "Status",
+      "priority": "Priorytet",
+      "normal": "Normalny"
+    }
+  },
+  "customers": {
+    "tableHeader": {
+      "photo": "Zdjęcie",
+      "firstName": "Imię",
+      "lastName": "Nazwisko",
+      "city": "Miasto",
+      "country": "Kraj",
+      "phone": "Telefon",
+      "totalBuys": "Suma wydatków"
+    },
+    "searchField": {
+      "searchCustomers": "Szukaj klientów..."
+    },
+    "button": {
+      "clearFilters": "Wyczyść filtry",
+      "clearFilter": "Wyczyść filtr",
+      "filterByCountry": "Filtruj wg kraju",
+      "sortBy": "Sortuj wg",
+      "ascending": "Malejąco",
+      "descending": "Rosnąco",
+      "clearSorting": "Bez sortowania",
+      "xlsx": "Eksport do XLSX"
+    },
+    "country": {
+      "usa": "USA",
+      "australia": "Australia",
+      "france": "Francja",
+      "norway": "Norwegia",
+      "unitedKingdom": "Wielka Brytania"
+    },
+    "city": {
+      "newYork": "Nowy Jork",
+      "munich": "Monachium",
+      "cologne": "Kolonia",
+      "london": "Londyn"
+    },
+    "chip": {
+      "country": "Kraj",
+      "sortedBy": "Sortowanie wg"
+    },
+    "customerModal": {
+      "moneySpent": "Wydatki",
+      "totalOrders": "Zamówienia",
+      "phone": "Telefon",
+      "email": "E-mail",
+      "returns": "Zwroty",
+      "loyaltyPoints": "Punkty lojalnościowe"
+    }
+  },
+  "products": {
+    "header": {
+      "type": "Typ",
+      "price": "Cena",
+      "markup": "Marża",
+      "profit": "Zysk",
+      "viewPhoto": "Zobacz zdjęcie"
+    },
+    "metrics": {
+      "inventoryStatus": "Stan magazynu",
+      "monthlyTarget": "Miesięczny cel",
+      "orderFullfillment": "Realizacja zamówień",
+      "conversionRate": "Wskaźnik konwersji"
+    },
+    "pdf": {
+      "exportToPdf": "Eksport do PDF"
+    },
+    "clipboard": {
+      "copiedToClipboard": "Skopiowano do schowka!"
+    },
+    "mobileList": {
+      "showAllProducts": "Lista produktów"
+    }
+  },
+  "analytics": {
+    "assetPerformance": {
+      "title": "Wydajność aktywów"
+    },
+    "todaySales": {
+      "title": "Dzisiejsza sprzedaż"
+    },
+    "totalProfit": {
+      "title": "Całkowity zysk"
+    },
+    "revenueTrends": {
+      "title": "Trendy przychodów"
+    },
+    "yearOverview": {
+      "title": "Przegląd roczny"
+    },
+    "marketMetrics": {
+      "title": "Wskażniki rynkowe"
+    },
+    "revenueDistribution": {
+      "title": "Rozkład przychodów"
+    }
+  },
+  "calendar": {
+    "deleteEventModalTitle": "Czy na pewno?",
+    "deleteEventModalSubtitle": "Naciśnij tak, jeśli chcesz",
+    "delete": "usunąć",
+    "move": "przenieść",
+    "theEvent": "wydarzenie",
+    "yes": "Tak",
+    "cancel": "Anuluj",
+    "addEventModalTitle": "Nowe wydarzenie",
+    "addEventModalSubtitle": "Proszę podać czas i tytuł nowego wydarzenia",
+    "addEventModalPlaceholder": "Tytuł wydarzenia",
+    "addEventConfirmButton": "Potwierdź",
+    "addEventTitleRequiredError": "Tytuł wydarzenia jest wymagany",
+    "addEventLengthError": "Tytuł nie może przekraczać 20 znaków",
+    "addEventIncorrectTime": "Nieprawidłowy przedział czasu"
+  },
+  "singleCharts": {
+    "bars": {
+      "title": "Sprzedaż produktów (USD)"
+    }
+  },
+  "sideMenu": {
+    "main": "Intro",
+    "dashboard": "Panel główny",
+    "eCommerce": "E-commerce",
+    "orders": "Zamówienia",
+    "customers": "Klienci",
+    "products": "Produkty",
+    "analytics": "Analityka",
+    "calendar": "Kalendarz",
+    "userProfile": "Profil Użytkownika",
+    "authentication": "Uwierzytelnianie",
+    "login": "Logowanie",
+    "register": "Rejestracja",
+    "forgotPassword": "Resetowanie hasła",
+    "userManagement": "Zarządzanie użytkownikami",
+    "components": "Komponenty",
+    "uiElements": "Elementy UI",
+    "forms": "Formularze",
+    "tables": "Tabele",
+    "charts": "Wykresy",
+    "shadcn": "Shadcn",
+    "tanstack": "Tanstack",
+    "recharts": "Recharts",
+    "singleCharts": "Wykresy",
+    "pages": "Aplikacje",
+    "area": "Obszar",
+    "bars": "Słupki",
+    "scatter": "Rozrzut",
+    "line": "Linia",
+    "signIn": "Zaloguj się",
+    "language": "Język",
+    "githubRepository": "GitHub",
+    "errorPages": "Strony błędów",
+    "error401": "401 Unauthorized",
+    "error404": "404 Not Found",
+    "error500": "500 Server Error"
+  },
+  "navbar": {
+    "auth": "Autoryzacja",
+    "userProfile": "Profil użytkownika",
+    "about": "O aplikacji",
+    "changelog": "Lista zmian",
+    "english": "Angielski",
+    "polish": "Polski",
+    "changeTheme": "Zmień motyw",
+    "theme": "Motyw",
+    "light": "Jasny",
+    "dark": "Ciemny",
+    "language": "Język",
+    "settings": "Ustawienia",
+    "contributing": "Współtworzenie",
+    "githubRepository": "GitHub",
+    "signOut": "Wyloguj się",
+    "error": "Błąd",
+    "tryAgain": "Spróbuj ponownie",
+    "pageNotFound": "Ups! Nie znaleziono strony",
+    "goToHomepage": "Przejdź do strony głównej",
+    "openUserMenu": "Otwórz menu",
+    "notifications": "Powiadomienia",
+    "search": {
+      "placeholder": "Szukaj...",
+      "noResults": "Nie znaleziono wyników",
+      "sections": {
+        "revenueOverTime": "Dochód miesięczny",
+        "bestsellingProducts": "Bestsellery",
+        "customerSatisfaction": "Zadowolenie klientów",
+        "revenuePerCountry": "Przychód według kraju",
+        "salesCard": "Obrót",
+        "profitCard": "Zysk",
+        "trafficCard": "Ruch",
+        "customersCard": "Klienci",
+        "assetPerformance": "Wydajność aktywów",
+        "todaysSales": "Dzisiejsza sprzedaż",
+        "totalProfit": "Całkowity zysk",
+        "revenueTrends": "Trendy przychodów",
+        "yearOverview": "Przegląd roczny",
+        "marketMetrics": "Wskażniki rynkowe",
+        "revenueDistribution": "Rozkład przychodów",
+        "customers": "Klienci",
+        "calendar": "Kalendarz",
+        "orders": "Zamówienia",
+        "products": "Produkty",
+        "profileHeader": "Nagłówek profilu",
+        "about": "O mnie",
+        "accountSettings": "Ustawienia konta",
+        "recentActivity": "Ostatnia aktywność",
+        "buttons": "Przyciski",
+        "command": "Paleta poleceń",
+        "avatars": "Awatary",
+        "tooltips": "Podpowiedzi",
+        "alerts": "Alerty",
+        "toasts": "Powiadomienia",
+        "skeletons": "Szkielety",
+        "dialogs": "Dialogi",
+        "dropdownMenu": "Menu rozwijane",
+        "badges": "Odznaki",
+        "popover": "Popover",
+        "progress": "Postęp",
+        "breadcrumbs": "Breadcrumbs",
+        "tabs": "Zakładki",
+        "separators": "Separatory",
+        "pagination": "Paginacja",
+        "inputFields": "Pola tekstowe",
+        "selectInputs": "Pola wyboru",
+        "textarea": "Pole wieloliniowe",
+        "colorPicker": "Wybór koloru",
+        "formValidation": "Walidacja formularza",
+        "checkboxes": "Checkboxy",
+        "radioButtons": "Przyciski radio",
+        "toggleSwitch": "Przełączniki",
+        "datePicker": "Wybór daty",
+        "fileUpload": "Wysyłanie plików",
+        "sliders": "Suwaki",
+        "basicTable": "Tabela podstawowa",
+        "advancedTable": "Tabela zaawansowana",
+        "userTable": "Tabela użytkowników",
+        "inventoryTable": "Tabela inwentarza",
+        "areaChart": "Wykres warstwowy",
+        "scatterChart": "Wykres punktowy",
+        "pieChart": "Wykres kołowy",
+        "radarChart": "Wykres radarowy",
+        "composedChart": "Wykres złożony",
+        "stackedBarChart": "Wykres słupkowy skumulowany",
+        "radialBarChart": "Wykres radialny",
+        "twoAxisLineChart": "Wykres liniowy dwuosiowy",
+        "mixedLineChart": "Wykres liniowy mieszany",
+        "verticalBarChart": "Wykres słupkowy pionowy",
+        "areaFillByValue": "Wykres warstwowy wg wartości",
+        "gradientPieChart": "Wykres kołowy gradientowy",
+        "lineChart": "Wykres liniowy"
+      },
+      "pages": {
+        "dashboard": "Panel główny",
+        "analytics": "Analityka",
+        "customers": "Klienci",
+        "calendar": "Kalendarz",
+        "orders": "Zamówienia",
+        "products": "Produkty",
+        "userProfile": "Profil",
+        "uiElements": "Elementy UI",
+        "forms": "Formularze",
+        "tables": "Tabele",
+        "charts": "Wykresy",
+        "userManagement": "Zarządzanie użytkownikami"
+      }
+    }
+  },
+  "auth": {
+    "signIn": "Zaloguj się",
+    "signUp": "Zarejestruj się",
+    "signOut": "Wyloguj się",
+    "register": "Rejestracja",
+    "yourEmail": "Twój e-mail",
+    "yourPassword": "Twoje hasło",
+    "noAccount": "Nie masz jeszcze konta?",
+    "registerHere": "Zarejestruj się...",
+    "createAccount": "Utwórz konto",
+    "alreadyHaveAccount": "Masz już konto?",
+    "signInHere": "Zaloguj się tutaj...",
+    "showPassword": "Pokaż hasło",
+    "hidePassword": "Ukryj hasło",
+    "emailFieldIsRequired": "E-mail jest wymagany",
+    "pleaseEnterAValidEmail": "Wprowadź prawidłowy adres e-mail",
+    "passwordFieldIsRequired": "Hasło jest wymagane",
+    "passwordMinimumLength": "Hasło musi mieć co najmniej 10 znaków",
+    "rememberMe": "Zapamiętaj mnie",
+    "forgotPassword": "Nie pamiętasz hasła?",
+    "forgotPasswordTitle": "Reset Hasła",
+    "forgotPasswordSubtitle": "Podaj swój e-mail, a wyślemy Ci link do resetowania hasła.",
+    "sendResetLink": "Wyślij link",
+    "checkYourEmail": "Sprawdź swoją skrzynkę",
+    "checkYourEmailDesc": "Jeśli konto z tym adresem istnieje, wysłaliśmy instrukcje resetowania hasła.",
+    "checkSpamFolder": "Nie otrzymałeś? Sprawdź folder spam.",
+    "backToSignInPrefix": "Czekaj, pamiętam hasło...",
+    "backToSignInLink": "Kliknij tutaj",
+    "confirmPassword": "Potwierdź hasło",
+    "confirmPasswordRequired": "Potwierdź swoje hasło",
+    "passwordsMustMatch": "Hasła muszą być takie same",
+    "logoutModalTitle": "Jesteś pewien?",
+    "logoutModalDesc": "Kliknij \"tak\" aby wylogować się z aplikacji",
+    "logoutModalCancelButton": "Anuluj",
+    "logoutModalConfirmButton": "Tak",
+    "logoutModalError": "Wylogowanie nie powiodło się",
+    "authErrors": {
+      "INVALID_EMAIL_OR_PASSWORD": "Nieprawidłowy email lub hasło",
+      "INVALID_EMAIL": "Nieprawidłowy format emaila",
+      "INVALID_PASSWORD": "Nieprawidłowe hasło",
+      "VALIDATION_ERROR": "Nieprawidłowe dane wejściowe",
+      "USER_ALREADY_EXISTS": "Użytkownik już istnieje. Użyj innego emaila.",
+      "EMAIL_NOT_VERIFIED": "Email nie zweryfikowany. Sprawdź skrzynkę.",
+      "EMAIL_ALREADY_VERIFIED": "Email jest już zweryfikowany",
+      "PASSWORD_TOO_SHORT": "Hasło jest za krótkie",
+      "PASSWORD_TOO_LONG": "Hasło jest za długie",
+      "SESSION_EXPIRED": "Sesja wygasła. Zaloguj się ponownie.",
+      "SESSION_FAILED": "Błąd sesji. Spróbuj ponownie.",
+      "FAILED_TO_CREATE_USER": "Nie udało się utworzyć konta.",
+      "ACCOUNT_ERROR": "Błąd konta. Spróbuj ponownie.",
+      "INVALID_TOKEN": "Nieprawidłowy lub wygasły token",
+      "SOCIAL_ACCOUNT_ALREADY_LINKED": "To konto społecznościowe jest już połączone",
+      "PROVIDER_ERROR": "Błąd dostawcy uwierzytelniania",
+      "SECURITY_ERROR": "Żądanie zablokowane ze względów bezpieczeństwa",
+      "INVALID_REQUEST": "Nieprawidłowe żądanie",
+      "EMAIL_UPDATE_BLOCKED": "Nie można zaktualizować emaila",
+      "PASSWORD_ALREADY_SET": "Hasło jest już ustawione",
+      "SIGNUP_DISABLED": "Rejestracja jest obecnie wyłączona",
+      "signInDefaultError": "Błąd logowania",
+      "signUpDefaultError": "Błąd rejestracji",
+      "networkError": "Nie można połączyć się z serwerem."
+    }
+  },
+  "breadcrumbs": {
+    "firstPart": "Nellavio",
+    "dashboard": "Panel główny",
+    "orders": "Zamówienia",
+    "customers": "Klienci",
+    "products": "Produkty",
+    "analytics": "Analityka",
+    "calendar": "Kalendarz",
+    "profile": "Profil",
+    "charts": "Wykresy",
+    "ui elements": "Elementy UI",
+    "forms": "Formularze",
+    "tables": "Tabele",
+    "ecommerce": "E-commerce",
+    "components": "Komponenty",
+    "user management": "Zarządzanie użytkownikami"
+  },
+  "profile": {
+    "memberSince": "Członek od",
+    "editProfile": "Edytuj profil",
+    "saveChanges": "Zapisz zmiany",
+    "contactInformation": "Informacje kontaktowe",
+    "email": "E-mail",
+    "phone": "Telefon",
+    "location": "Lokalizacja",
+    "socialLinks": "Media społecznościowe",
+    "quickStats": "Szybkie statystyki",
+    "totalOrders": "Wszystkie zamówienia",
+    "completedTasks": "Ukończone zadania",
+    "activeProjects": "Aktywne projekty",
+    "about": "O mnie",
+    "accountSettings": "Ustawienia konta",
+    "emailNotifications": "Powiadomienia e-mail",
+    "emailNotificationsDesc": "Otrzymuj aktualizacje e-mail o swoim koncie",
+    "twoFactorAuth": "Uwierzytelnianie dwuskładnikowe",
+    "twoFactorAuthDesc": "Dodaj dodatkową warstwę bezpieczeństwa do konta",
+    "darkMode": "Tryb ciemny",
+    "darkModeDesc": "Włącz ciemny motyw",
+    "recentActivity": "Ostatnia aktywność"
+  },
+  "uiElements": {
+    "buttons": "Przyciski",
+    "alerts": "Alerty",
+    "command": "Polecenia",
+    "avatars": "Awatary",
+    "tabs": "Zakładki",
+    "skeletons": "Szkielety",
+    "dialogs": "Dialogi",
+    "badges": "Odznaki",
+    "popover": "Popover",
+    "progress": "Postęp",
+    "tooltips": "Podpowiedzi",
+    "breadcrumbs": "Ścieżka nawigacji",
+    "separators": "Separatory",
+    "dropdownMenu": "Menu rozwijane",
+    "pagination": "Paginacja",
+    "toasts": "Powiadomienia",
+    "toastInfoTitle": "Informacja",
+    "toastInfoDesc": "To jest informacyjne powiadomienie toast.",
+    "toastErrorTitle": "Błąd",
+    "toastErrorDesc": "Coś poszło nie tak. Spróbuj ponownie.",
+    "toastSuccessTitle": "Sukces",
+    "toastSuccessDesc": "Twoje zmiany zostały zapisane pomyślnie."
+  },
+  "forms": {
+    "inputFields": "Pola tekstowe",
+    "selectInputs": "Pola wyboru",
+    "textarea": "Obszar tekstowy",
+    "colorPicker": "Wybór koloru",
+    "formValidation": "Walidacja formularza",
+    "fileUpload": "Przesyłanie plików",
+    "checkboxes": "Pola wyboru wielokrotnego",
+    "radioButtons": "Przyciski opcji",
+    "toggleSwitch": "Przełączniki",
+    "datePicker": "Wybór daty",
+    "sliders": "Suwaki"
+  },
+  "tables": {
+    "basicTable": "Tabela podstawowa",
+    "advancedTable": "Tabela zaawansowana",
+    "userTable": "Tabela użytkowników",
+    "inventoryTable": "Tabela magazynowa",
+    "cardTitles": {
+      "basicTable": "Tabela podstawowa",
+      "searchAndSelection": "Tabela z wyszukiwaniem i zaznaczaniem",
+      "filters": "Tabela z filtrami",
+      "pagination": "Tabela z paginacją"
+    }
+  },
+  "dateRange": {
+    "today": "Dziś",
+    "last7days": "Ostatnie 7 dni",
+    "last30days": "Ostatnie 30 dni",
+    "thisMonth": "Ten miesiąc",
+    "lastQuarter": "Ostatni kwartał",
+    "thisYear": "Ten rok",
+    "customRange": "Własny zakres",
+    "from": "Od",
+    "to": "Do",
+    "apply": "Zastosuj",
+    "cancel": "Anuluj",
+    "dialogTitle": "Wybierz zakres dat"
+  },
+  "settings": {
+    "title": "Ustawienia",
+    "theme": "Motyw",
+    "selectTheme": "Wybierz motyw",
+    "light": "Jasny",
+    "dark": "Ciemny",
+    "system": "Systemowy",
+    "homepageLayout": "Układ strony głównej",
+    "threeCards": "Trzy karty",
+    "fourCards": "Cztery karty",
+    "alternativeFont": "Alternatywna czcionka",
+    "chartAnimations": "Animacje wykresów",
+    "sidebarMode": "Tryb panelu bocznego",
+    "expanded": "Rozwinięty",
+    "collapsed": "Zwinięty",
+    "fixedNavbar": "Przypięty navbar",
+    "githubRepository": "Repozytorium GitHub"
+  },
+  "notificationsUI": {
+    "title": "Powiadomienia",
+    "new": "Nowe",
+    "all": "Wszystkie",
+    "readAll": "PRZECZYTAJ WSZYSTKIE",
+    "close": "Zamknij",
+    "markRead": "Oznacz jako przeczytane",
+    "noNotifications": "Brak powiadomień do wyświetlenia"
+  },
+  "charts": {
+    "areaChart": "Wykres obszarowy",
+    "scatterChart": "Wykres punktowy",
+    "pieChart": "Wykres kołowy",
+    "radarChart": "Wykres radarowy",
+    "composedChart": "Wykres złożony",
+    "stackedBarChart": "Wykres słupkowy skumulowany",
+    "radialBarChart": "Wykres słupkowy promieniowy",
+    "twoAxisLineChart": "Wykres liniowy dwuosiowy",
+    "mixedLineChart": "Wykres liniowy mieszany",
+    "verticalBarChart": "Wykres słupkowy pionowy",
+    "lineChart": "Wykres liniowy",
+    "areaFillByValueChart": "Wykres obszarowy wg wartości",
+    "gradientPieChart": "Wykres kołowy z gradientem",
+    "lineAreaChart": "Trend zamówień i zwrotów"
+  },
+  "userManagement": {
+    "title": "Zarządzanie użytkownikami",
+    "demoBanner": "Tryb demo - zmiany resetują się po odświeżeniu strony. Podłącz backend Better Auth dla trwałego RBAC.",
+    "searchPlaceholder": "Szukaj użytkowników...",
+    "filter": {
+      "all": "Wszyscy",
+      "active": "Aktywni",
+      "banned": "Zablokowani",
+      "allRoles": "Wszystkie role"
+    },
+    "button": {
+      "sortBy": "Sortuj",
+      "ascending": "Rosnąco",
+      "descending": "Malejąco",
+      "clearSorting": "Wyczyść sortowanie",
+      "clearFilters": "Wyczyść filtry"
+    },
+    "chip": {
+      "role": "Rola",
+      "status": "Status",
+      "sortedBy": "Sortuj wg"
+    },
+    "tableHeader": {
+      "name": "Imię i nazwisko",
+      "email": "Email",
+      "role": "Rola",
+      "status": "Status",
+      "joined": "Dołączył",
+      "actions": "Akcje"
+    },
+    "role": {
+      "admin": "Admin",
+      "editor": "Edytor",
+      "viewer": "Widz"
+    },
+    "status": {
+      "active": "Aktywny",
+      "banned": "Zablokowany"
+    },
+    "toast": {
+      "roleUpdated": "Rola zmieniona",
+      "roleUpdatedDesc": "{name} ma teraz rolę {role}",
+      "nameUpdated": "Nazwa zmieniona",
+      "nameUpdatedDesc": "Zmieniono nazwę na {name}",
+      "error": "Operacja nieudana",
+      "permissionDenied": "Nie masz uprawnień do wykonania tej akcji"
+    },
+    "selfDemotion": {
+      "title": "Jesteś pewien?",
+      "description": "Usunięcie własnej roli admina spowoduje wylogowanie. Będziesz potrzebować innego administratora, aby przywrócić dostęp.",
+      "cancel": "Anuluj",
+      "confirm": "Tak"
+    },
+    "totalUsers": "{count} użytkowników",
+    "loading": "Ładowanie użytkowników...",
+    "emptyState": "Nie znaleziono użytkowników",
+    "accessDenied": "Wymagany dostęp administratora",
+    "accessDeniedHint": "Ta strona jest dostępna tylko dla użytkowników z rolą admin. Poproś istniejącego administratora o zmianę roli lub ustaw ją bezpośrednio w bazie danych."
+  },
+  "errorPages": {
+    "backToHomepage": "Powrót do strony głównej",
+    "tryAgain": "Spróbuj ponownie",
+    "unexpectedError": {
+      "title": "Coś poszło nie tak",
+      "description": "Wystąpił nieoczekiwany błąd podczas ładowania tej strony."
+    },
+    "error401": {
+      "title": "Brak dostępu",
+      "description": "Nie masz uprawnień do wyświetlenia tej strony."
+    },
+    "error404": {
+      "title": "Strona nie znaleziona",
+      "description": "Strona, której szukasz, mogła zostać przeniesiona lub usunięta."
+    },
+    "error500": {
+      "title": "Błąd serwera",
+      "description": "Coś poszło nie tak po naszej stronie podczas przetwarzania żądania."
+    }
+  }
+}
